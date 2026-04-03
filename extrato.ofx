@@ -1,0 +1,623 @@
+OFXHEADER:100
+DATA:OFXSGML
+VERSION:102
+SECURITY:NONE
+ENCODING:USASCII
+CHARSET:1252
+COMPRESSION:NONE
+OLDFILEUID:NONE
+NEWFILEUID:NONE
+
+<OFX>
+	<SIGNONMSGSRSV1>
+		<SONRS>
+			<STATUS>
+				<CODE>0
+				<SEVERITY>INFO
+			</STATUS>
+			<DTSERVER>00000000000000
+			<LANGUAGE>POR
+		</SONRS>
+	</SIGNONMSGSRSV1>
+	<BANKMSGSRSV1>
+		<STMTTRNRS>
+			<TRNUID>1001
+			<STATUS>
+				<CODE>0
+				<SEVERITY>INFO
+			</STATUS>
+			<STMTRS>
+				<CURDEF>BRL
+				<BANKACCTFROM>
+					<BANKID>0237
+					<ACCTID>507/83963
+					<ACCTTYPE>CHECKING
+				</BANKACCTFROM>
+				<BANKTRANLIST>
+					<DTSTART>20251201000000
+					<DTEND>20251231000000
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251201000000[-03:EST]
+						<TRNAMT>1518.00
+						<FITID>N20217:01/12/25:1518.0:0610492: Transfe Pix: Rem: Singular Mind Marketi 01/12
+						<CHECKNUM>0610492
+						<MEMO>Transfe Pix Rem: Singular Mind Marketi 01/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251201000000[-03:EST]
+						<TRNAMT>13600.00
+						<FITID>N20234:01/12/25:13600.0:0610492: Transfe Pix: Rem: Singular Mind Marketi 01/12
+						<CHECKNUM>0610492
+						<MEMO>Transfe Pix Rem: Singular Mind Marketi 01/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251201000000[-03:EST]
+						<TRNAMT>-14758.00
+						<FITID>N20251:01/12/25:-14758.0:8445802: Apl.invest Fac:
+						<CHECKNUM>8445802
+						<MEMO>Apl.invest Fac 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251201000000[-03:EST]
+						<TRNAMT>-70.00
+						<FITID>N2026E:01/12/25:-70.0:1301417: Transfe Pix: Des: Geraldo Nunes de Mora 01/12
+						<CHECKNUM>1301417
+						<MEMO>Transfe Pix Des: Geraldo Nunes de Mora 01/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251201000000[-03:EST]
+						<TRNAMT>-130.00
+						<FITID>N2028C:01/12/25:-130.0:1702096: Transfe Pix: Des: Maria Aparecida Duart 30/11
+						<CHECKNUM>1702096
+						<MEMO>Transfe Pix Des: Maria Aparecida Duart 30/11
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251201000000[-03:EST]
+						<TRNAMT>-160.00
+						<FITID>N202AA:01/12/25:-160.0:1951480: Transfe Pix: Des: Gabriela Martins de c 30/11
+						<CHECKNUM>1951480
+						<MEMO>Transfe Pix Des: Gabriela Martins de c 30/11
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251202000000[-03:EST]
+						<TRNAMT>97.52
+						<FITID>N202C8:02/12/25:97.52:7069705: Resgate Inv Fac:
+						<CHECKNUM>7069705
+						<MEMO>Resgate Inv Fac 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251202000000[-03:EST]
+						<TRNAMT>0.04
+						<FITID>N202E4:02/12/25:0.04:7069705: Rent.inv.facil:
+						<CHECKNUM>7069705
+						<MEMO>Rent.inv.facil 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251202000000[-03:EST]
+						<TRNAMT>-97.56
+						<FITID>N20300:02/12/25:-97.56:0940360: Pix Qrcode Din: Des: Amazon.com.br         02/12
+						<CHECKNUM>0940360
+						<MEMO>Pix Qrcode Din Des: Amazon.com.br 02/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251203000000[-03:EST]
+						<TRNAMT>42.37
+						<FITID>N2031E:03/12/25:42.37:7069705: Resgate Inv Fac:
+						<CHECKNUM>7069705
+						<MEMO>Resgate Inv Fac 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251203000000[-03:EST]
+						<TRNAMT>0.02
+						<FITID>N2033A:03/12/25:0.02:7069705: Rent.inv.facil:
+						<CHECKNUM>7069705
+						<MEMO>Rent.inv.facil 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251203000000[-03:EST]
+						<TRNAMT>-9.00
+						<FITID>N20356:03/12/25:-9.0:1635322: Pix Qrcode Est: Des: Caroline Ferreira Pin 03/12
+						<CHECKNUM>1635322
+						<MEMO>Pix Qrcode Est Des: Caroline Ferreira Pin 03/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251203000000[-03:EST]
+						<TRNAMT>-33.39
+						<FITID>N20374:03/12/25:-33.39:1633439: Pix Qrcode Din: Des: Porte Servicos Ltda   03/12
+						<CHECKNUM>1633439
+						<MEMO>Pix Qrcode Din Des: Porte Servicos Ltda 03/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251204000000[-03:EST]
+						<TRNAMT>219.80
+						<FITID>N20392:04/12/25:219.8:7069705: Resgate Inv Fac:
+						<CHECKNUM>7069705
+						<MEMO>Resgate Inv Fac 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251204000000[-03:EST]
+						<TRNAMT>0.10
+						<FITID>N203AE:04/12/25:0.1:7069705: Rent.inv.facil:
+						<CHECKNUM>7069705
+						<MEMO>Rent.inv.facil 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251204000000[-03:EST]
+						<TRNAMT>-219.90
+						<FITID>N203CA:04/12/25:-219.9:2319537: Pix Qrcode Din: Des: Balada Bilheteria Dig 04/12
+						<CHECKNUM>2319537
+						<MEMO>Pix Qrcode Din Des: Balada Bilheteria Dig 04/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251205000000[-03:EST]
+						<TRNAMT>1500.00
+						<FITID>N203E8:05/12/25:1500.0:1942491: Transfe Pix: Rem: Mariton Cogo Carvalho 05/12
+						<CHECKNUM>1942491
+						<MEMO>Transfe Pix Rem: Mariton Cogo Carvalho 05/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251205000000[-03:EST]
+						<TRNAMT>-1276.00
+						<FITID>N20405:05/12/25:-1276.0:6304160: Apl.invest Fac:
+						<CHECKNUM>6304160
+						<MEMO>Apl.invest Fac 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251205000000[-03:EST]
+						<TRNAMT>-224.00
+						<FITID>N20422:05/12/25:-224.0:1229325: Pix Qrcode Din: Des: Balada Bilheteria Dig 05/12
+						<CHECKNUM>1229325
+						<MEMO>Pix Qrcode Din Des: Balada Bilheteria Dig 05/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251209000000[-03:EST]
+						<TRNAMT>250.29
+						<FITID>N20440:09/12/25:250.29:7069705: Resgate Inv Fac:
+						<CHECKNUM>7069705
+						<MEMO>Resgate Inv Fac 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251209000000[-03:EST]
+						<TRNAMT>99.00
+						<FITID>N2045C:09/12/25:99.0:0907069: Devolucao Pix: Rem: Omens Servicos Online 09/12
+						<CHECKNUM>0907069
+						<MEMO>Devolucao Pix Rem: Omens Servicos Online 09/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251209000000[-03:EST]
+						<TRNAMT>0.13
+						<FITID>N20479:09/12/25:0.13:7069705: Rent.inv.facil:
+						<CHECKNUM>7069705
+						<MEMO>Rent.inv.facil 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251209000000[-03:EST]
+						<TRNAMT>-150.00
+						<FITID>N20495:09/12/25:-150.0:0916529: Transfe Pix: Des: Sabrina Cristine c de 08/12
+						<CHECKNUM>0916529
+						<MEMO>Transfe Pix Des: Sabrina Cristine c de 08/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251209000000[-03:EST]
+						<TRNAMT>-79.00
+						<FITID>N204B3:09/12/25:-79.0:1648239: Pix Qrcode Est: Des: Cfb Tecnologia Ltda   06/12
+						<CHECKNUM>1648239
+						<MEMO>Pix Qrcode Est Des: Cfb Tecnologia Ltda 06/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251209000000[-03:EST]
+						<TRNAMT>-14.00
+						<FITID>N204D1:09/12/25:-14.0:0747435: Pix Qrcode Din: Des: Panificadora Laguardi 08/12
+						<CHECKNUM>0747435
+						<MEMO>Pix Qrcode Din Des: Panificadora Laguardi 08/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251209000000[-03:EST]
+						<TRNAMT>-7.42
+						<FITID>N204EF:09/12/25:-7.42:1018574: Pix Qrcode Din: Des: Panificadora Laguardi 08/12
+						<CHECKNUM>1018574
+						<MEMO>Pix Qrcode Din Des: Panificadora Laguardi 08/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251209000000[-03:EST]
+						<TRNAMT>-99.00
+						<FITID>N2050D:09/12/25:-99.0:1759080: Pix Qrcode Din: Des: Omens Servicos Online 06/12
+						<CHECKNUM>1759080
+						<MEMO>Pix Qrcode Din Des: Omens Servicos Online 06/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251210000000[-03:EST]
+						<TRNAMT>1500.00
+						<FITID>N2052B:10/12/25:1500.0:3077547: Resgate Inv Fac:
+						<CHECKNUM>3077547
+						<MEMO>Resgate Inv Fac 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251210000000[-03:EST]
+						<TRNAMT>123.50
+						<FITID>N20547:10/12/25:123.5:7069705: Resgate Inv Fac:
+						<CHECKNUM>7069705
+						<MEMO>Resgate Inv Fac 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251210000000[-03:EST]
+						<TRNAMT>6924.23
+						<FITID>N20563:10/12/25:6924.23:8445802: Resgate Inv Fac:
+						<CHECKNUM>8445802
+						<MEMO>Resgate Inv Fac 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251210000000[-03:EST]
+						<TRNAMT>7650.00
+						<FITID>N2057F:10/12/25:7650.0:0948557: Transfe Pix: Rem: Singular Mind Marketi 10/12
+						<CHECKNUM>0948557
+						<MEMO>Transfe Pix Rem: Singular Mind Marketi 10/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251210000000[-03:EST]
+						<TRNAMT>0.74
+						<FITID>N2059C:10/12/25:0.74:3077547: Rent.inv.facil:
+						<CHECKNUM>3077547
+						<MEMO>Rent.inv.facil 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251210000000[-03:EST]
+						<TRNAMT>0.07
+						<FITID>N205B8:10/12/25:0.07:7069705: Rent.inv.facil:
+						<CHECKNUM>7069705
+						<MEMO>Rent.inv.facil 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251210000000[-03:EST]
+						<TRNAMT>0.31
+						<FITID>N205D4:10/12/25:0.31:8445802: Rent.inv.facil:
+						<CHECKNUM>8445802
+						<MEMO>Rent.inv.facil 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251210000000[-03:EST]
+						<TRNAMT>-834.06
+						<FITID>N205F0:10/12/25:-834.06:0000007: Pagto Cobranca: Tmb Educacao e Servicos Ltda
+						<CHECKNUM>0000007
+						<MEMO>Pagto Cobranca Tmb Educacao e Servicos Ltda
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251210000000[-03:EST]
+						<TRNAMT>-1000.09
+						<FITID>N2060E:10/12/25:-1000.09:3990344: Gasto c Credito:
+						<CHECKNUM>3990344
+						<MEMO>Gasto c Credito 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251210000000[-03:EST]
+						<TRNAMT>-14364.70
+						<FITID>N2062B:10/12/25:-14364.7:3990344: Gasto c Credito:
+						<CHECKNUM>3990344
+						<MEMO>Gasto c Credito 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251212000000[-03:EST]
+						<TRNAMT>1471.98
+						<FITID>N20648:12/12/25:1471.98:8445802: Resgate Inv Fac:
+						<CHECKNUM>8445802
+						<MEMO>Resgate Inv Fac 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251212000000[-03:EST]
+						<TRNAMT>0.11
+						<FITID>N20664:12/12/25:0.11:8445802: Rent.inv.facil:
+						<CHECKNUM>8445802
+						<MEMO>Rent.inv.facil 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251212000000[-03:EST]
+						<TRNAMT>-1472.09
+						<FITID>N20680:12/12/25:-1472.09:0000014: Pagto Cobranca: Bradesco Administradora de Conso
+						<CHECKNUM>0000014
+						<MEMO>Pagto Cobranca Bradesco Administradora de Conso
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251215000000[-03:EST]
+						<TRNAMT>4196.56
+						<FITID>N2069E:15/12/25:4196.56:8445802: Resgate Inv Fac:
+						<CHECKNUM>8445802
+						<MEMO>Resgate Inv Fac 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251215000000[-03:EST]
+						<TRNAMT>274.46
+						<FITID>N206BA:15/12/25:274.46:0008162: Juros s/ rd fx:
+						<CHECKNUM>0008162
+						<MEMO>Juros s/ rd fx 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251215000000[-03:EST]
+						<TRNAMT>0.43
+						<FITID>N206D6:15/12/25:0.43:8445802: Rent.inv.facil:
+						<CHECKNUM>8445802
+						<MEMO>Rent.inv.facil 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251215000000[-03:EST]
+						<TRNAMT>-80.00
+						<FITID>N206F2:15/12/25:-80.0:0816412: Transfe Pix: Des: Gabriela Martins de c 15/12
+						<CHECKNUM>0816412
+						<MEMO>Transfe Pix Des: Gabriela Martins de c 15/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251215000000[-03:EST]
+						<TRNAMT>-169.75
+						<FITID>N20710:15/12/25:-169.75:1100456: Transfe Pix: Des: Laura Dos Santos Cost 15/12
+						<CHECKNUM>1100456
+						<MEMO>Transfe Pix Des: Laura Dos Santos Cost 15/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251215000000[-03:EST]
+						<TRNAMT>-462.72
+						<FITID>N2072E:15/12/25:-462.72:1233106: Transfe Pix: Des: Frigo Rodrigues       15/12
+						<CHECKNUM>1233106
+						<MEMO>Transfe Pix Des: Frigo Rodrigues 15/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251215000000[-03:EST]
+						<TRNAMT>-3754.18
+						<FITID>N2074C:15/12/25:-3754.18:1821294: Transfe Pix: Des: Waldir Venancio Duart 15/12
+						<CHECKNUM>1821294
+						<MEMO>Transfe Pix Des: Waldir Venancio Duart 15/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251215000000[-03:EST]
+						<TRNAMT>-4.80
+						<FITID>N2076A:15/12/25:-4.8:1655419: Pix Qrcode Din: Des: Padaria e Lanchonete  15/12
+						<CHECKNUM>1655419
+						<MEMO>Pix Qrcode Din Des: Padaria e Lanchonete 15/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251216000000[-03:EST]
+						<TRNAMT>489.94
+						<FITID>N20788:16/12/25:489.94:8445802: Resgate Inv Fac:
+						<CHECKNUM>8445802
+						<MEMO>Resgate Inv Fac 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251216000000[-03:EST]
+						<TRNAMT>0.06
+						<FITID>N207A4:16/12/25:0.06:8445802: Rent.inv.facil:
+						<CHECKNUM>8445802
+						<MEMO>Rent.inv.facil 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251216000000[-03:EST]
+						<TRNAMT>-490.00
+						<FITID>N207C0:16/12/25:-490.0:0824559: Transfe Pix: Des: Laura Dos Santos Cost 16/12
+						<CHECKNUM>0824559
+						<MEMO>Transfe Pix Des: Laura Dos Santos Cost 16/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251218000000[-03:EST]
+						<TRNAMT>99.98
+						<FITID>N207DE:18/12/25:99.98:8445802: Resgate Inv Fac:
+						<CHECKNUM>8445802
+						<MEMO>Resgate Inv Fac 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251218000000[-03:EST]
+						<TRNAMT>0.02
+						<FITID>N207FA:18/12/25:0.02:8445802: Rent.inv.facil:
+						<CHECKNUM>8445802
+						<MEMO>Rent.inv.facil 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251218000000[-03:EST]
+						<TRNAMT>-100.00
+						<FITID>N20816:18/12/25:-100.0:0848125: Transfe Pix: Des: Jorge Jose Dias       18/12
+						<CHECKNUM>0848125
+						<MEMO>Transfe Pix Des: Jorge Jose Dias 18/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251219000000[-03:EST]
+						<TRNAMT>151.93
+						<FITID>N20834:19/12/25:151.93:8445802: Resgate Inv Fac:
+						<CHECKNUM>8445802
+						<MEMO>Resgate Inv Fac 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251219000000[-03:EST]
+						<TRNAMT>0.03
+						<FITID>N20850:19/12/25:0.03:8445802: Rent.inv.facil:
+						<CHECKNUM>8445802
+						<MEMO>Rent.inv.facil 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251219000000[-03:EST]
+						<TRNAMT>-151.96
+						<FITID>N2086C:19/12/25:-151.96:1110367: Pix Qrcode Din: Des: Gdo Participacoes S/a 19/12
+						<CHECKNUM>1110367
+						<MEMO>Pix Qrcode Din Des: Gdo Participacoes S/a 19/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251222000000[-03:EST]
+						<TRNAMT>169.05
+						<FITID>N2088A:22/12/25:169.05:8445802: Resgate Inv Fac:
+						<CHECKNUM>8445802
+						<MEMO>Resgate Inv Fac 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251222000000[-03:EST]
+						<TRNAMT>0.04
+						<FITID>N208A6:22/12/25:0.04:8445802: Rent.inv.facil:
+						<CHECKNUM>8445802
+						<MEMO>Rent.inv.facil 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251222000000[-03:EST]
+						<TRNAMT>-50.00
+						<FITID>N208C2:22/12/25:-50.0:1303322: Transfe Pix: Des: João Pedro Kneipp de  22/12
+						<CHECKNUM>1303322
+						<MEMO>Transfe Pix Des: João Pedro Kneipp de 22/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251222000000[-03:EST]
+						<TRNAMT>-4.99
+						<FITID>N208E0:22/12/25:-4.99:1944105: Pix Qrcode Din: Des: Drogarias Minas Mais  21/12
+						<CHECKNUM>1944105
+						<MEMO>Pix Qrcode Din Des: Drogarias Minas Mais 21/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251222000000[-03:EST]
+						<TRNAMT>-114.10
+						<FITID>N208FE:22/12/25:-114.1:0508134: Pix Automatico: Des: Claro S.a             20/12
+						<CHECKNUM>0508134
+						<MEMO>Pix Automatico Des: Claro S.a 20/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251223000000[-03:EST]
+						<TRNAMT>1276.00
+						<FITID>N2091C:23/12/25:1276.0:6304160: Resgate Inv Fac:
+						<CHECKNUM>6304160
+						<MEMO>Resgate Inv Fac 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251223000000[-03:EST]
+						<TRNAMT>1254.33
+						<FITID>N20938:23/12/25:1254.33:8445802: Resgate Inv Fac:
+						<CHECKNUM>8445802
+						<MEMO>Resgate Inv Fac 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251223000000[-03:EST]
+						<TRNAMT>500000.00
+						<FITID>N20954:23/12/25:500000.0:1659018: Transfe Pix: Rem: Singular Mind Marketi 23/12
+						<CHECKNUM>1659018
+						<MEMO>Transfe Pix Rem: Singular Mind Marketi 23/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251223000000[-03:EST]
+						<TRNAMT>0.21
+						<FITID>N20971:23/12/25:0.21:6304160: Rent.inv.facil:
+						<CHECKNUM>6304160
+						<MEMO>Rent.inv.facil 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20251223000000[-03:EST]
+						<TRNAMT>0.32
+						<FITID>N2098D:23/12/25:0.32:8445802: Rent.inv.facil:
+						<CHECKNUM>8445802
+						<MEMO>Rent.inv.facil 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251223000000[-03:EST]
+						<TRNAMT>-5455.86
+						<FITID>N209A9:23/12/25:-5455.86:3570507: Aplicacao Cdb:
+						<CHECKNUM>3570507
+						<MEMO>Aplicacao Cdb 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251223000000[-03:EST]
+						<TRNAMT>-497000.00
+						<FITID>N209C6:23/12/25:-497000.0:3570507: Aplicacao Cdb:
+						<CHECKNUM>3570507
+						<MEMO>Aplicacao Cdb 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20251223000000[-03:EST]
+						<TRNAMT>-75.00
+						<FITID>N209E3:23/12/25:-75.0:0606281: Transfe Pix: Des: Pedro Augusto Mostaro 23/12
+						<CHECKNUM>0606281
+						<MEMO>Transfe Pix Des: Pedro Augusto Mostaro 23/12
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>CREDIT
+						<DTPOSTED>20260116000000[-03:EST]
+						<TRNAMT>20.00
+						<FITID>N20022:16/01/26:20.0:0160126: Resg.autom.invest Facil*:
+						<CHECKNUM>0160126
+						<MEMO>Resg.autom.invest Facil* 
+					</STMTTRN>
+					<STMTTRN>
+						<TRNTYPE>DEBIT
+						<DTPOSTED>20260116000000[-03:EST]
+						<TRNAMT>-20.00
+						<FITID>N2003E:16/01/26:-20.0:1933096: Transferencia Pix: Des: Adilson Lucindro      16/01
+						<CHECKNUM>1933096
+						<MEMO>Transferencia Pix Des: Adilson Lucindro 16/01
+					</STMTTRN>
+				</BANKTRANLIST>
+				<LEDGERBAL>
+					<BALAMT>1.00
+					<DTASOF>20251223000000[-03:EST]
+				</LEDGERBAL>
+			</STMTRS>
+		</STMTTRNRS>
+	</BANKMSGSRSV1>
+</OFX>
