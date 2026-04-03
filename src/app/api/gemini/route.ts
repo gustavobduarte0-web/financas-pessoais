@@ -1,4 +1,4 @@
-import { GoogleGenerativeAI } from '@google/generative-ai'
+import Anthropic from '@anthropic-ai/sdk'
 import { NextRequest, NextResponse } from 'next/server'
 
 const CATEGORY_IDS = [
@@ -10,9 +10,9 @@ const CATEGORY_IDS = [
 type CategoryId = (typeof CATEGORY_IDS)[number]
 
 function getClient() {
-  const key = process.env.GEMINI_API_KEY
-  if (!key) throw new Error('GEMINI_API_KEY não configurada')
-  return new GoogleGenerativeAI(key)
+  const key = process.env.ANTHROPIC_API_KEY
+  if (!key) throw new Error('ANTHROPIC_API_KEY não configurada')
+  return new Anthropic({ apiKey: key })
 }
 
 export async function POST(req: NextRequest) {
@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ error: 'Ação inválida' }, { status: 400 })
   } catch (err) {
-    console.error('Gemini API error:', err)
+    console.error('AI API error:', err)
     const message = err instanceof Error ? err.message : 'Erro interno'
     return NextResponse.json({ error: message }, { status: 500 })
   }
@@ -40,12 +40,16 @@ async function handleClassifyBatch(descriptions: string[]) {
     return NextResponse.json({ categories: [] })
   }
 
-  const genAI = getClient()
-  const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' })
-
+  const client = getClient()
   const list = descriptions.map((d, i) => `${i + 1}. "${d}"`).join('\n')
 
-  const prompt = `Você é um classificador de transações bancárias brasileiras.
+  const response = await client.messages.create({
+    model: 'claude-haiku-4-5-20251001',
+    max_tokens: 512,
+    messages: [
+      {
+        role: 'user',
+        content: `Você é um classificador de transações bancárias brasileiras.
 Classifique cada transação abaixo em UMA das categorias disponíveis.
 Responda APENAS com um JSON array de strings, na mesma ordem das transações.
 Exemplo: ["alimentacao", "supermercado", "transporte"]
@@ -69,15 +73,15 @@ Categorias disponíveis:
 Transações:
 ${list}
 
-Responda apenas com o JSON array:`
+Responda apenas com o JSON array:`,
+      },
+    ],
+  })
 
-  const result = await model.generateContent(prompt)
-  const text = result.response.text().trim()
+  const text = response.content[0].type === 'text' ? response.content[0].text.trim() : ''
 
-  // Extract JSON array from response
   const match = text.match(/\[[\s\S]*\]/)
   if (!match) {
-    // fallback: all 'outros'
     return NextResponse.json({ categories: descriptions.map(() => 'outros') })
   }
 
@@ -94,7 +98,6 @@ Responda apenas com o JSON array:`
       : 'outros'
   )
 
-  // Pad if response has fewer items than input
   while (categories.length < descriptions.length) {
     categories.push('outros')
   }
@@ -103,7 +106,7 @@ Responda apenas com o JSON array:`
 }
 
 async function handleChat(
-  messages: Array<{ role: 'user' | 'model'; content: string }>,
+  messages: Array<{ role: 'user' | 'assistant'; content: string }>,
   transactions: unknown[],
   summary: unknown,
 ) {
@@ -111,8 +114,7 @@ async function handleChat(
     return NextResponse.json({ error: 'Sem mensagens' }, { status: 400 })
   }
 
-  const genAI = getClient()
-  const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' })
+  const client = getClient()
 
   const systemContext = `Você é um assistente financeiro pessoal inteligente e amigável para um brasileiro.
 Você tem acesso completo aos dados financeiros do usuário importados do banco Bradesco.
@@ -127,25 +129,13 @@ Resumo: ${JSON.stringify(summary)}
 Transações (formato: {date, desc, amount (positivo=receita, negativo=despesa), cat, src}):
 ${JSON.stringify(transactions)}`
 
-  const history = [
-    {
-      role: 'user' as const,
-      parts: [{ text: systemContext }],
-    },
-    {
-      role: 'model' as const,
-      parts: [{ text: 'Entendido! Analisei seus dados financeiros e estou pronto para ajudá-lo. O que você gostaria de saber?' }],
-    },
-    ...messages.slice(0, -1).map((m) => ({
-      role: m.role,
-      parts: [{ text: m.content }],
-    })),
-  ]
+  const response = await client.messages.create({
+    model: 'claude-sonnet-4-6',
+    max_tokens: 2048,
+    system: systemContext,
+    messages: messages as Anthropic.MessageParam[],
+  })
 
-  const chat = model.startChat({ history })
-  const lastMsg = messages[messages.length - 1]
-  const result = await chat.sendMessage(lastMsg.content)
-  const text = result.response.text()
-
+  const text = response.content[0].type === 'text' ? response.content[0].text : ''
   return NextResponse.json({ text })
 }

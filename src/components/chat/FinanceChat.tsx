@@ -7,7 +7,7 @@ import { formatBRL } from '@/lib/utils/currency'
 import { Send, Bot, User, Loader2 } from 'lucide-react'
 
 interface Message {
-  role: 'user' | 'model'
+  role: 'user' | 'assistant'
   content: string
 }
 
@@ -24,7 +24,6 @@ export function FinanceChat() {
   const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
   const messagesEndRef = useRef<HTMLDivElement>(null)
 
   const transactions = useLiveQuery(async () => {
@@ -86,7 +85,6 @@ export function FinanceChat() {
     setMessages(newMessages)
     setInput('')
     setLoading(true)
-    setError(null)
 
     try {
       const { transactions: txData, summary } = buildContext()
@@ -108,13 +106,12 @@ export function FinanceChat() {
       }
 
       const data = await res.json() as { text: string }
-      setMessages((prev) => [...prev, { role: 'model', content: data.text }])
+      setMessages((prev) => [...prev, { role: 'assistant', content: data.text }])
     } catch (err) {
       const msg = err instanceof Error ? err.message : 'Erro desconhecido'
-      setError(msg)
       setMessages((prev) => [...prev, {
-        role: 'model',
-        content: `Ocorreu um erro: ${msg}. Verifique se a chave GEMINI_API_KEY está configurada no .env.local.`,
+        role: 'assistant',
+        content: `Ocorreu um erro: ${msg}. Verifique se a chave ANTHROPIC_API_KEY está configurada.`,
       }])
     } finally {
       setLoading(false)
@@ -133,7 +130,7 @@ export function FinanceChat() {
               </div>
               <h2 className="text-xl font-semibold text-text-primary">Assistente Financeiro</h2>
               <p className="text-text-secondary text-sm mt-2">
-                Conheço todos os seus dados financeiros. Pergunte qualquer coisa!
+                Powered by Claude — conheço todos os seus dados financeiros.
               </p>
               {transactions !== undefined && (
                 <p className="text-text-muted text-xs mt-1">
