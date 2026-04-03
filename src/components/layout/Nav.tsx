@@ -1,9 +1,10 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
-import { LayoutDashboard, ArrowDownUp, Upload, Settings, MessageSquare } from 'lucide-react'
+import { usePathname, useRouter } from 'next/navigation'
+import { LayoutDashboard, ArrowDownUp, Upload, Settings, MessageSquare, LogOut } from 'lucide-react'
 import { cn } from '@/lib/utils'
+import { logout, getSession } from './AuthProvider'
 
 const links = [
   { href: '/', label: 'Dashboard', icon: LayoutDashboard },
@@ -15,6 +16,16 @@ const links = [
 
 export function Nav() {
   const pathname = usePathname()
+  const router = useRouter()
+
+  if (pathname === '/login') return null
+
+  const session = getSession()
+
+  const handleLogout = () => {
+    logout()
+    router.push('/login')
+  }
 
   return (
     <>
@@ -51,8 +62,17 @@ export function Nav() {
         </nav>
 
         {/* Footer */}
-        <div className="px-5 py-4 border-t border-border">
-          <p className="text-xs text-text-muted">Dados salvos localmente</p>
+        <div className="px-4 py-4 border-t border-border space-y-2">
+          {session && (
+            <p className="text-xs text-text-muted truncate px-1">{session.email}</p>
+          )}
+          <button
+            onClick={handleLogout}
+            className="flex items-center gap-2 px-3 py-2 w-full rounded-lg text-sm text-text-secondary hover:bg-bg-elevated hover:text-red-400 transition-colors"
+          >
+            <LogOut size={16} />
+            Sair
+          </button>
         </div>
       </aside>
 
