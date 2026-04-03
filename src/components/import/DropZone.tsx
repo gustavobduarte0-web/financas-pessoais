@@ -80,7 +80,7 @@ export function DropZone({ onFiles, loading }: DropZoneProps) {
               Arraste os arquivos ou clique para selecionar
             </p>
             <p className="text-text-secondary text-sm mt-1">
-              Extrato Bradesco (.ofx) ou Fatura do Cartão (.xlsx)
+              Bradesco OFX · Fatura XLSX · Planner XLSX
             </p>
           </div>
           <div className="flex gap-2 mt-1">
@@ -110,7 +110,7 @@ export function DropZone({ onFiles, loading }: DropZoneProps) {
                   <p className="text-sm font-medium text-text-primary">{file.name}</p>
                   <p className="text-xs text-text-secondary">
                     {(file.size / 1024).toFixed(1)} KB ·{' '}
-                    {file.name.endsWith('.ofx') ? 'Conta Corrente' : 'Cartão de Crédito'}
+                    {file.name.endsWith('.ofx') ? 'Conta Corrente' : 'Planilha XLSX'}
                   </p>
                 </div>
               </div>

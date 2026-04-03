@@ -2,10 +2,12 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import * as XLSX from 'xlsx'
 import { DropZone } from '@/components/import/DropZone'
 import { ImportPreview } from '@/components/import/ImportPreview'
 import { parseOFX } from '@/lib/parsers/ofx'
 import { parseXLSX } from '@/lib/parsers/xlsx'
+import { parsePlanner, isPlannerWorkbook } from '@/lib/parsers/planner'
 import { addTransactions } from '@/lib/db/transactions'
 import type { Transaction } from '@/types'
 
@@ -14,6 +16,15 @@ type Step = 'upload' | 'preview' | 'success'
 interface ParsedResult {
   transactions: Transaction[]
   duplicatesSkipped: number
+}
+
+async function detectAndParseXLSX(file: File): Promise<Transaction[]> {
+  const buffer = await file.arrayBuffer()
+  const workbook = XLSX.read(buffer, { type: 'array', cellDates: true })
+  if (isPlannerWorkbook(workbook)) {
+    return parsePlanner(file)
+  }
+  return parseXLSX(file)
 }
 
 export default function ImportPage() {
@@ -39,13 +50,13 @@ export default function ImportPage() {
           file.name.toLowerCase().endsWith('.xlsx') ||
           file.name.toLowerCase().endsWith('.xls')
         ) {
-          const txs = await parseXLSX(file)
+          const txs = await detectAndParseXLSX(file)
           allTransactions.push(...txs)
         }
       }
 
       if (allTransactions.length === 0) {
-        setError('Nenhuma transação encontrada nos arquivos. Verifique se são extratos do Bradesco.')
+        setError('Nenhuma transação encontrada nos arquivos.')
         return
       }
 
@@ -53,7 +64,7 @@ export default function ImportPage() {
       setStep('preview')
     } catch (err) {
       console.error(err)
-      setError('Erro ao processar o arquivo. Verifique se é um extrato válido do Bradesco.')
+      setError('Erro ao processar o arquivo. Verifique se o formato é suportado.')
     } finally {
       setLoading(false)
     }
@@ -87,7 +98,7 @@ export default function ImportPage() {
       <div>
         <h1 className="text-2xl font-bold text-text-primary">Importar Extrato</h1>
         <p className="text-text-secondary mt-1">
-          Importe seu extrato Bradesco (OFX) ou fatura do cartão (XLSX)
+          Bradesco (OFX), fatura do cartão (XLSX) ou Planner pessoal (XLSX)
         </p>
       </div>
 
@@ -172,15 +183,19 @@ export default function ImportPage() {
 
       {/* Tip */}
       {step === 'upload' && (
-        <div className="p-4 bg-bg-card border border-border rounded-xl text-sm text-text-secondary space-y-1">
-          <p className="font-medium text-text-primary mb-2">Como exportar do Bradesco:</p>
+        <div className="p-4 bg-bg-card border border-border rounded-xl text-sm text-text-secondary space-y-2">
+          <p className="font-medium text-text-primary">Formatos suportados:</p>
           <p>
-            <span className="text-accent-purple-light">Extrato OFX:</span> Internet Banking →
+            <span className="text-accent-purple-light">Extrato OFX:</span> Bradesco Internet Banking →
             Extrato → Exportar → Formato OFX
           </p>
           <p>
-            <span className="text-blue-400">Fatura XLSX:</span> Internet Banking → Cartão →
+            <span className="text-blue-400">Fatura XLSX:</span> Bradesco Internet Banking → Cartão →
             Fatura → Exportar → Excel
+          </p>
+          <p>
+            <span className="text-accent-green">Planner XLSX:</span> Planilha pessoal com sheet
+            "Lançamentos" — detectada automaticamente
           </p>
         </div>
       )}
